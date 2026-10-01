@@ -1,0 +1,733 @@
+
+    
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flavoria Restaurant</title>
+    <!-- استدعاء الخطوط -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- استدعاء الأيقونات (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- ملف الستايل -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- الجزء الخاص بالخلفية والمحتوى الأول -->
+    <section class="hero-section" id="home">
+        
+        <!-- شريط التنقل (Header) -->
+        <header>
+            <a href="#" class="logo">
+                <i class="fa-solid fa-cloud-meatball"></i>
+                <div class="logo-text">
+                    <h2>Flavoria</h2>
+                    <span>RESTAURANT</span>
+                </div>
+            </a>
+
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#book" class="btn-outline">
+                    <i class="fa-solid fa-utensils"></i> Book a Table
+                </a>
+                <!-- زر القائمة للموبايل -->
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- المحتوى الرئيسي (Hero Content) -->
+        <div class="hero-content">
+            <div class="subtitle">
+                <span>GOOD FOOD</span> &bull; <span>GOOD MOOD</span>
+            </div>
+            
+            <h1>Delicious Food<br><span class="highlight">For Every Moment</span></h1>
+            
+            <p>Experience the perfect blend of fresh ingredients, authentic flavors and a cozy atmosphere at Flavoria. Where every meal tells a story.</p>
+            
+            <div class="hero-buttons">
+                <a href="#menu" class="btn-solid">Explore Menu <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#story" class="btn-play">
+                    <div class="play-icon"><i class="fa-solid fa-play"></i></div>
+                    Watch Our Story
+                </a>
+            </div>
+
+            <!-- المميزات في الأسفل -->
+            <div class="hero-features">
+                <div class="feature-box">
+                    <i class="fa-solid fa-leaf"></i>
+                    <div class="feat-text">
+                        <h4>Fresh Ingredients</h4>
+                        <p>Only the best for you</p>
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <i class="fa-solid fa-hat-chef"></i> <!-- بديل للأيقونة الاحترافية -->
+                    <i class="fa-solid fa-user-chef" style="font-family: 'Font Awesome 6 Free'; font-weight: 900;"></i>
+                    <div class="feat-text">
+                        <h4>Expert Chefs</h4>
+                        <p>Crafted with passion</p>
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <i class="fa-regular fa-heart"></i>
+                    <div class="feat-text">
+                        <h4>Cozy Atmosphere</h4>
+                        <p>Perfect for any occasion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ملف الجافا سكريبت -->
+    <script >// تحديد العناصر من الـ HTML
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+
+// إضافة حدث النقر (Click Event)
+mobileMenu.addEventListener('click', () => {
+    // إضافة أو إزالة كلاس 'active' لإظهار وإخفاء القائمة
+    navLinks.classList.toggle('active');
+    
+    // تغيير شكل الأيقونة بين القائمة العادية وعلامة X (اختياري)
+    const icon = mobileMenu.querySelector('i');
+    if (navLinks.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+    } else {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+    }
+});</script>
+
+
+
+
+
+<!-- قسم المعرض (Gallery) -->
+    <section class="gallery-section" id="gallery">
+        
+        <!-- عنوان القسم -->
+        <div class="section-header">
+            <div class="section-subtitle">
+                <span>OUR GALLERY</span>
+            </div>
+            <h2 class="section-title">Moments at <span class="highlight">Flavoria</span></h2>
+            <p class="section-desc">Take a look at some of our favorite moments — delicious dishes,<br>cozy atmosphere, and happy guests.</p>
+        </div>
+
+        <!-- أزرار الفلترة -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">
+                <i class="fa-solid fa-border-all"></i> All
+            </button>
+            <button class="filter-btn" data-filter="food">
+                <i class="fa-solid fa-utensils"></i> Food
+            </button>
+            <button class="filter-btn" data-filter="drinks">
+                <i class="fa-solid fa-martini-glass-citrus"></i> Drinks
+            </button>
+            <button class="filter-btn" data-filter="atmosphere">
+                <i class="fa-solid fa-users"></i> Atmosphere
+            </button>
+        </div>
+
+        <!-- <! شبكة الصور (Grid) -->
+<div class="gallery-grid">
+    <!-- الصورة 1: طويلة (تأخذ صفين) - تم حل مشكلة الرابط هنا -->
+    <div class="gallery-item item-tall" data-category="food">
+        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800&auto=format&fit=crop" alt="Delicious Steak">
+    </div>
+    
+    <!-- الصورة 2 -->
+    <div class="gallery-item" data-category="atmosphere">
+        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=600&auto=format&fit=crop" alt="Restaurant Interior">
+    </div>
+    
+    <!-- الصورة 3 -->
+    <div class="gallery-item" data-category="food">
+        <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?q=80&w=600&auto=format&fit=crop" alt="Pasta">
+    </div>
+    
+    <!-- الصورة 4 -->
+    <div class="gallery-item" data-category="drinks">
+        <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?q=80&w=600&auto=format&fit=crop" alt="Cocktail">
+    </div>
+
+    <!-- الصورة 5 -->
+    <div class="gallery-item" data-category="food">
+        <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?q=80&w=600&auto=format&fit=crop" alt="Dessert">
+    </div>
+
+    <!-- الصورة 6 -->
+    <div class="gallery-item" data-category="food">
+        <img src="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?q=80&w=600&auto=format&fit=crop" alt="Dishes">
+    </div>
+
+    <!-- الصورة 7 -->
+    <div class="gallery-item" data-category="atmosphere">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=600&auto=format&fit=crop" alt="Tables">
+    </div>
+</div>
+        <!-- زر المزيد -->
+        <div class="view-more">
+            <a href="#" class="btn-outline-gold">View More Photos <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+    </section>
+
+    <!-- كود الـ JavaScript الخاص بالفلترة يعمل مباشرة داخل الـ HTML -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // 1. إزالة كلاس active من كل الأزرار ووضعه للزر المضغوط
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // 2. جلب نوع الفلتر
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    // 3. إظهار وإخفاء الصور بناءً على الفلتر
+                    galleryItems.forEach(item => {
+                        const itemCategory = item.getAttribute('data-category');
+                        
+                        if (filterValue === 'all' || filterValue === itemCategory) {
+                            item.style.display = 'block';
+                            // إضافة أنيميشن بسيط عند الظهور
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 50);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300); // نفس مدة الـ transition في الـ CSS
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- قسم القائمة (Menu Section) -->
+    <section class="menu-section" id="menu">
+        
+        <!-- عنوان القسم -->
+        <div class="section-header">
+            <div class="section-subtitle">
+                <span>OUR MENU</span>
+            </div>
+            <h2 class="section-title">Fresh Flavors,<br><span class="highlight">Every Day</span></h2>
+            <p class="section-desc">From classic favorites to unique creations, our menu is crafted<br>with the finest ingredients and a passion for great taste.</p>
+        </div>
+
+        <!-- أزرار فلترة المنيو -->
+        <div class="menu-filters">
+            <button class="menu-filter-btn active" data-filter="all">All</button>
+            <button class="menu-filter-btn" data-filter="main">Main Dishes</button>
+            <button class="menu-filter-btn" data-filter="appetizers">Appetizers</button>
+            <button class="menu-filter-btn" data-filter="salads">Salads</button>
+            <button class="menu-filter-btn" data-filter="desserts">Desserts</button>
+            <button class="menu-filter-btn" data-filter="drinks">Drinks</button>
+        </div>
+
+        <!-- شبكة البطاقات (Menu Grid) -->
+        <div class="menu-grid">
+            
+            <!-- الصنف الأول: Grilled Steak -->
+            <div class="menu-card" data-category="main">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=600&auto=format&fit=crop" alt="Grilled Steak">
+                </div>
+                <div class="card-content">
+                    <h3>Grilled Steak</h3>
+                    <p>Tender grilled steak with roasted vegetables and herbs.</p>
+                    <div class="card-footer">
+                        <span class="price">$24.99</span>
+                        <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الصنف الثاني: Mozzarella Sticks (Appetizers) -->
+            <!-- <div class="menu-card" data-category="appetizers">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1548869206-92b0261f9a1f?q=80&w=600&auto=format&fit=crop" alt="Appetizers">
+                </div>
+                <div class="card-content">
+                    <h3>Mozzarella Sticks</h3>
+                    <p>Crispy mozzarella sticks served with a special marinara sauce.</p>
+                    <div class="card-footer">
+                        <span class="price">$8.99</span>
+                        <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i></button>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- الصنف الثالث: Caesar Salad -->
+            <div class="menu-card" data-category="salads">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=600&auto=format&fit=crop" alt="Caesar Salad">
+                </div>
+                <div class="card-content">
+                    <h3>Caesar Salad</h3>
+                    <p>Fresh romaine lettuce, parmesan, croutons and caesar dressing.</p>
+                    <div class="card-footer">
+                        <span class="price">$10.99</span>
+                        <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الصنف الرابع: Chocolate Lava Cake -->
+            <div class="menu-card" data-category="desserts">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?q=80&w=600&auto=format&fit=crop" alt="Chocolate Lava Cake">
+                </div>
+                <div class="card-content">
+                    <h3>Chocolate Lava Cake</h3>
+                    <p>Warm chocolate cake with a soft, molten center.</p>
+                    <div class="card-footer">
+                        <span class="price">$7.99</span>
+                        <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الصنف الخامس: Fresh Lemonade -->
+            <div class="menu-card" data-category="drinks">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=600&auto=format&fit=crop" alt="Fresh Lemonade">
+                </div>
+                <div class="card-content">
+                    <h3>Fresh Lemonade</h3>
+                    <p>Chilled lemonade with natural lemon and mint.</p>
+                    <div class="card-footer">
+                        <span class="price">$4.99</span>
+                        <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- زر المزيد -->
+        <div class="view-more">
+            <a href="#" class="btn-outline-gold">View Full Menu <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+    </section>
+
+    <!-- سكريبت الفلترة الخاص بقسم المنيو -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuFilterBtns = document.querySelectorAll('.menu-filter-btn');
+            const menuCards = document.querySelectorAll('.menu-card');
+
+            menuFilterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // إزالة كلاس active من كل الأزرار
+                    menuFilterBtns.forEach(b => b.classList.remove('active'));
+                    // إضافة كلاس active للزر المضغوط
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    menuCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        
+                        if (filterValue === 'all' || filterValue === cardCategory) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 50);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- قسم من نحن (About Section) -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            
+            <!-- الجزء الأيسر: الصورة والشريحة العائمة -->
+            <div class="about-image-col">
+                <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=800&auto=format&fit=crop" alt="Chef preparing food" class="main-about-img">
+                
+                <!-- الشريحة العائمة (Badge) -->
+                <div class="experience-badge">
+                    <div class="badge-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="badge-text">
+                        <h3 class="counter" data-target="15">0</h3><span>+</span>
+                        <p>Years of<br>Experience</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الجزء الأيمن: النصوص والإحصائيات -->
+            <div class="about-text-col">
+                <!-- عنوان القسم (معدل ليكون على اليسار) -->
+                <div class="section-subtitle about-subtitle">
+                    <span>OUR STORY</span>
+                </div>
+                <h2 class="section-title">Discover The Story Behind <span class="highlight">Flavoria</span></h2>
+                <p class="section-desc">We started with a simple vision: to create a dining experience that captivates the senses. Every dish we serve is a masterpiece, crafted with passion, tradition, and the finest ingredients sourced from local farms.</p>
+                
+                <p class="section-desc">Whether you are here for a quick bite or a grand celebration, our cozy atmosphere and dedicated staff ensure a memorable experience.</p>
+
+                <!-- الإحصائيات (Stats Grid) -->
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <h3 class="counter" data-target="50">0</h3><span>+</span>
+                        <p>Signature Dishes</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="counter" data-target="120">0</h3><span>k</span>
+                        <p>Happy Customers</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="counter" data-target="4">0</h3>
+                        <p>Master Chefs</p>
+                    </div>
+                </div>
+
+                <!-- زر دعوة لاتخاذ إجراء -->
+                <a href="#contact" class="btn-solid">Book a Table <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- كود الجافا سكريبت لتشغيل العدادات عند الوصول للقسم -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const counters = document.querySelectorAll('.counter');
+            const aboutSection = document.querySelector('.about-section');
+            let activated = false; // لمنع تشغيل العداد أكثر من مرة
+
+            // إعداد الـ Intersection Observer لمراقبة متى يظهر القسم على الشاشة
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !activated) {
+                        counters.forEach(counter => {
+                            counter.innerText = '0';
+                            const updateCounter = () => {
+                                const target = +counter.getAttribute('data-target');
+                                const current = +counter.innerText;
+                                // سرعة العد (كلما زاد الرقم قلّت السرعة)
+                                const increment = target / 40; 
+
+                                if (current < target) {
+                                    counter.innerText = Math.ceil(current + increment);
+                                    setTimeout(updateCounter, 30);
+                                } else {
+                                    counter.innerText = target;
+                                }
+                            };
+                            updateCounter();
+                        });
+                        activated = true; // تم التشغيل بنجاح
+                    }
+                });
+            }, { threshold: 0.5 }); // يعمل عندما يظهر 50% من القسم في الشاشة
+
+            if (aboutSection) {
+                observer.observe(aboutSection);
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- قسم التواصل والحجز (Contact Section) -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            
+            <!-- الجزء الأيسر: معلومات التواصل -->
+            <div class="contact-info">
+                <div class="section-subtitle about-subtitle">
+                    <span>GET IN TOUCH</span>
+                </div>
+                <h2 class="section-title">Visit Us or <span class="highlight">Book a Table</span></h2>
+                <p class="section-desc">We would love to hear from you. Reserve your table or simply drop us a message to ask about our menu and special events.</p>
+
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="info-text">
+                            <h4>Location</h4>
+                            <p>123 Flavoria Street, Cairo, Egypt</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="info-text">
+                            <h4>Phone Number</h4>
+                            <p>+20 123 456 7890</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-regular fa-envelope"></i></div>
+                        <div class="info-text">
+                            <h4>Email Address</h4>
+                            <p>hello@flavoria.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-regular fa-clock"></i></div>
+                        <div class="info-text">
+                            <h4>Opening Hours</h4>
+                            <p>Mon - Sun: 10:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الجزء الأيمن: نموذج الحجز (Form) -->
+            <div class="contact-form-wrapper">
+                <form id="reservationForm" class="contact-form">
+                    <div class="input-group">
+                        <input type="text" id="name" required placeholder="Your Full Name">
+                    </div>
+                    
+                    <div class="input-row">
+                        <div class="input-group">
+                            <input type="email" id="email" required placeholder="Email Address">
+                        </div>
+                        <div class="input-group">
+                            <input type="tel" id="phone" required placeholder="Phone Number">
+                        </div>
+                    </div>
+                    
+                    <div class="input-row">
+                        <div class="input-group">
+                            <input type="date" id="date" required>
+                        </div>
+                        <div class="input-group">
+                            <select id="guests" required>
+                                <option value="" disabled selected>Number of Guests</option>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4+ People</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <textarea id="message" rows="4" placeholder="Special Requests (Optional)"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-solid btn-full">Confirm Reservation <i class="fa-solid fa-check"></i></button>
+                </form>
+
+                <!-- رسالة النجاح (تظهر بعد ملء الفورم) -->
+                <div id="successMessage" class="success-message">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <h3>Thank You!</h3>
+                    <p>Your reservation request has been sent. We will confirm with you shortly.</p>
+                    <button id="bookAnother" class="btn-outline-gold" style="margin-top: 20px;">Book Another Table</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- كود الجافا سكريبت الخاص بالفورم -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('reservationForm');
+            const successMsg = document.getElementById('successMessage');
+            const bookAnotherBtn = document.getElementById('bookAnother');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault(); // منع الصفحة من التحميل (Reload)
+                
+                // إضافة تأثير اختفاء للفورم وظهور لرسالة النجاح
+                form.style.opacity = '0';
+                setTimeout(() => {
+                    form.style.display = 'none';
+                    successMsg.style.display = 'flex';
+                    setTimeout(() => {
+                        successMsg.style.opacity = '1';
+                        successMsg.style.transform = 'scale(1)';
+                    }, 50);
+                }, 300);
+            });
+
+            // زر العودة للحجز مرة أخرى
+            bookAnotherBtn.addEventListener('click', () => {
+                successMsg.style.opacity = '0';
+                successMsg.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    successMsg.style.display = 'none';
+                    form.reset(); // تفريغ الحقول
+                    form.style.display = 'flex';
+                    setTimeout(() => {
+                        form.style.opacity = '1';
+                    }, 50);
+                }, 300);
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- الفوتر (Footer) -->
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <!-- الجزء الأول: الشعار ونبذة مختصرة -->
+            <div class="footer-brand">
+                <a href="#home" class="logo">
+                    <i class="fa-solid fa-cloud-meatball"></i>
+                    <div class="logo-text">
+                        <h2>Flavoria</h2>
+                        <span>RESTAURANT</span>
+                    </div>
+                </a>
+                <p>Experience the perfect blend of fresh ingredients, authentic flavors, and a cozy atmosphere. Every meal tells a story.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <!-- الجزء الثاني: الروابط السريعة -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <!-- الجزء الثالث: النشرة البريدية -->
+            <div class="footer-newsletter">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get special offers and updates.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+
+        </div>
+        
+        <!-- حقوق النشر -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Flavoria Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
