@@ -1,6 +1,6 @@
-/* إعدادات المتغيرات والألوان */
+
 :root {
-    --primary-color: #F6A95B; /* لون برتقالي/ذهبي مشابه للتصميم */
+    --primary-color: #F6A95B; 
     --text-light: #ffffff;
     --text-gray: #a8a8a8;
     --bg-dark: #0a0a0a;
@@ -21,7 +21,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ================= إعدادات الـ Hero Section مع الخلفية المدمجة ================= */
+/* =====Hero Section ================= */
 .hero-section {
     position: relative;
     min-height: 100vh;
@@ -32,7 +32,7 @@ body {
     background-size: cover;
     padding: 0 5%;
 }
-/* ================= الهيدر (Header) ================= */
+/* ================= (Header) ================= */
 header {
     display: flex;
     justify-content: space-between;
@@ -129,13 +129,12 @@ header {
     cursor: pointer;
 }
 
-/* ================= محتوى القسم الرئيسي ================= */
 .hero-content {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 600px; /* تحديد عرض النص ليكون على اليسار */
+    max-width: 600px; 
     padding-bottom: 50px;
     z-index: 2;
 }
@@ -227,7 +226,6 @@ header {
     color: var(--primary-color);
 }
 
-/* ================= المميزات السفلية ================= */
 .hero-features {
     display: flex;
     gap: 40px;
@@ -257,7 +255,7 @@ header {
     color: var(--text-gray);
 }
 
-/* ================= التجاوب (Responsive) ================= */
+/* ================= (Responsive) ================= */
 
 @media (max-width: 1024px) {
     .hero-features {
@@ -267,7 +265,6 @@ header {
 }
 
 @media (max-width: 768px) {
-    /* تغيير اتجاه التدرج اللوني في الموبايل ليكون من الأعلى للأسفل */
     .hero-section {
         background: linear-gradient(180deg, rgba(10,10,10,0.95) 40%, rgba(10,10,10,0.6) 100%), 
                     url('https://images.unsplash.com/photo-1544025162-835c6df6eb52?q=80&w=1080&auto=format&fit=crop') no-repeat center center;
@@ -275,7 +272,7 @@ header {
     }
 
     .nav-links {
-        display: none; /* إخفاء القائمة وإظهارها بالـ JS */
+        display: none;
         flex-direction: column;
         position: absolute;
         top: 80px;
@@ -292,7 +289,7 @@ header {
     }
 
     .btn-outline {
-        display: none; /* إخفاء زر الحجز في الهيدر لتوفير المساحة */
+        display: none; 
     }
 
     .menu-toggle {
@@ -332,15 +329,15 @@ header {
 
 
 
-/* ================= قسم المعرض (Gallery Section) ================= */
+/* ================= (Gallery Section) ================= */
 .gallery-section {
     padding: 80px 5%;
     background-color: var(--bg-dark);
     position: relative;
-    /* إضافة خلفية داكنة جداً للقسم لتتناسق مع التصميم */
+ 
 }
 
-/* تنسيق العناوين */
+
 .section-header {
     text-align: center;
     margin-bottom: 40px;
@@ -382,7 +379,7 @@ header {
     line-height: 1.6;
 }
 
-/* أزرار الفلترة */
+
 .filter-buttons {
     display: flex;
     justify-content: center;
@@ -421,11 +418,11 @@ header {
     font-weight: 500;
 }
 
-/* شبكة المعرض (CSS Grid) */
+/* (CSS Grid) */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 220px; /* ارتفاع الصف الافتراضي */
+    grid-auto-rows: 220px; 
     gap: 20px;
     margin-bottom: 50px;
 }
@@ -446,15 +443,14 @@ header {
 }
 
 .gallery-item:hover img {
-    transform: scale(1.08); /* تأثير التقريب عند الوقوف بالماوس */
+    transform: scale(1.08); 
 }
 
-/* جعل الصورة الأولى طويلة تأخذ صفين (للحم) */
+
 .item-tall {
     grid-row: span 2;
 }
 
-/* زر عرض المزيد أسفل المعرض */
 .view-more {
     text-align: center;
 }
@@ -477,16 +473,16 @@ header {
     color: #000;
 }
 
-/* ================= التجاوب (Media Queries) ================= */
+/* =================(Media Queries) ================= */
 
 @media (max-width: 1024px) {
     .gallery-grid {
-        grid-template-columns: repeat(2, 1fr); /* عمودين في التابلت */
+        grid-template-columns: repeat(2, 1fr); 
         grid-auto-rows: 250px;
     }
     
     .item-tall {
-        grid-row: span 1; /* إلغاء الطول المزدوج في الشاشات الأصغر للحفاظ على التناسق */
+        grid-row: span 1; 
     }
 }
 
@@ -496,7 +492,7 @@ header {
     }
 
     .gallery-grid {
-        grid-template-columns: 1fr; /* عمود واحد في الموبايل */
+        grid-template-columns: 1fr; 
         grid-auto-rows: 250px;
     }
 }
@@ -518,13 +514,12 @@ header {
 
 
 
-/* ================= قسم المنيو (Menu Section) ================= */
+/* ================(Menu Section) ================= */
 .menu-section {
     padding: 80px 5%;
     background-color: var(--bg-dark);
 }
 
-/* أزرار فلترة المنيو (مختلفة قليلاً عن المعرض لتطابق التصميم) */
 .menu-filters {
     display: flex;
     justify-content: center;
@@ -549,25 +544,24 @@ header {
     color: var(--text-light);
 }
 
-/* الزر النشط يأخذ خلفية برتقالية */
 .menu-filter-btn.active {
     background-color: var(--primary-color);
     color: #000;
     font-weight: 500;
 }
 
-/* شبكة بطاقات المنيو */
+
 .menu-grid {
     display: grid;
-    /* التوزيع التلقائي ليناسب 5 بطاقات في الشاشات الكبيرة */
+
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 25px;
     margin-bottom: 50px;
 }
 
-/* تصميم البطاقة */
+
 .menu-card {
-    background-color: #111111; /* لون داكن قليلاً لإبراز البطاقة */
+    background-color: #111111; 
     border: 1px solid rgba(255, 255, 255, 0.03);
     border-radius: 12px;
     overflow: hidden;
@@ -612,10 +606,10 @@ header {
     font-size: 0.8rem;
     line-height: 1.5;
     margin-bottom: 20px;
-    min-height: 55px; /* توحيد الارتفاع لتبدو الأزرار متساوية */
+    min-height: 55px;
 }
 
-/* الفوتر الخاص بالبطاقة (السعر وزر الإضافة) */
+
 .card-footer {
     display: flex;
     justify-content: space-between;
@@ -649,7 +643,7 @@ header {
     color: #000;
 }
 
-/* ================= التجاوب (Responsive) ================= */
+/* ================= (Responsive) ================= */
 
 @media (max-width: 1024px) {
     .menu-grid {
@@ -682,10 +676,10 @@ header {
 
 
 
-/* ================= قسم من نحن (About Section) ================= */
+/* ================= (About Section) ================= */
 .about-section {
     padding: 100px 5%;
-    background-color: #0d0d0d; /* درجة لونية مختلفة قليلاً لكسر الملل */
+    background-color: #0d0d0d; 
     overflow: hidden;
 }
 
@@ -696,7 +690,7 @@ header {
     gap: 60px;
 }
 
-/* --- تنسيق الجزء الأيسر (الصورة) --- */
+
 .about-image-col {
     flex: 1;
     position: relative;
@@ -710,7 +704,7 @@ header {
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* الشريحة العائمة (Badge) */
+
 .experience-badge {
     position: absolute;
     bottom: -30px;
@@ -751,12 +745,11 @@ header {
     letter-spacing: 1px;
 }
 
-/* --- تنسيق الجزء الأيمن (النصوص) --- */
+
 .about-text-col {
     flex: 1;
 }
 
-/* تعديل الـ subtitle ليكون على اليسار ولا يحتوي على خط في بدايته */
 .about-subtitle {
     justify-content: flex-start;
 }
@@ -775,7 +768,7 @@ header {
     margin-bottom: 20px;
 }
 
-/* الإحصائيات */
+
 .about-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -804,7 +797,7 @@ header {
     margin-top: 5px;
 }
 
-/* ================= التجاوب (Responsive) ================= */
+/* ================= (Responsive) ================= */
 
 @media (max-width: 1024px) {
     .about-container {
@@ -825,12 +818,12 @@ header {
 
 @media (max-width: 768px) {
     .about-container {
-        flex-direction: column; /* تحويل العرض لعمودي في الموبايل */
+        flex-direction: column; 
         text-align: center;
     }
 
     .experience-badge {
-        position: relative; /* إلغاء التموضع المطلق في الموبايل لعدم الخروج عن الشاشة */
+        position: relative; 
         bottom: 0;
         right: 0;
         margin-top: -30px;
@@ -841,21 +834,21 @@ header {
     }
 
     .about-subtitle {
-        justify-content: center; /* توسيط العنوان الفرعي */
+        justify-content: center; 
         margin-top: 40px;
     }
     
     .about-subtitle::before {
-        display: block; /* إعادة إظهار الخط الأيسر للتوسيط */
+        display: block; 
     }
 
     .about-text-col .section-title,
     .about-text-col .section-desc {
-        text-align: center; /* توسيط النصوص */
+        text-align: center; 
     }
 
     .about-stats {
-        grid-template-columns: 1fr; /* الإحصائيات تصبح تحت بعضها */
+        grid-template-columns: 1fr;
         gap: 30px;
     }
 }
@@ -872,10 +865,10 @@ header {
 
 
 
-/* ================= قسم التواصل (Contact Section) ================= */
+/* ===============Contact Section) ================= */
 .contact-section {
     padding: 100px 5%;
-    background-color: var(--bg-dark); /* نفس لون الخلفية الأساسي */
+    background-color: var(--bg-dark); 
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -887,7 +880,6 @@ header {
     margin: 0 auto;
 }
 
-/* --- الجزء الأيسر: معلومات التواصل --- */
 .contact-info {
     flex: 1;
 }
@@ -942,7 +934,6 @@ header {
     font-size: 0.9rem;
 }
 
-/* --- الجزء الأيمن: الفورم --- */
 .contact-form-wrapper {
     flex: 1.2;
     background-color: #111111;
@@ -951,7 +942,7 @@ header {
     border: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
     position: relative;
-    min-height: 450px; /* للحفاظ على الارتفاع عند ظهور رسالة النجاح */
+    min-height: 450px; 
 }
 
 .contact-form {
@@ -972,7 +963,7 @@ header {
     flex-direction: column;
 }
 
-/* تنسيق حقول الإدخال */
+
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
@@ -988,7 +979,7 @@ header {
     transition: all 0.3s ease;
 }
 
-/* لتغيير لون أيقونة التقويم (Date Picker) في الوضع المظلم */
+
 .contact-form input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
     cursor: pointer;
@@ -1005,7 +996,7 @@ header {
     resize: vertical;
 }
 
-/* زر إرسال بعرض كامل */
+
 .btn-full {
     width: 100%;
     justify-content: center;
@@ -1015,9 +1006,9 @@ header {
     font-family: var(--font-body);
 }
 
-/* --- رسالة النجاح --- */
+
 .success-message {
-    display: none; /* مخفية بالبداية */
+    display: none; 
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -1049,7 +1040,7 @@ header {
     max-width: 80%;
 }
 
-/* ================= التجاوب (Responsive) ================= */
+/* ================= (Responsive) ================= */
 
 @media (max-width: 1024px) {
     .contact-container {
@@ -1062,7 +1053,7 @@ header {
 
 @media (max-width: 768px) {
     .contact-container {
-        flex-direction: column; /* تحويل العرض لعمودي في الموبايل */
+        flex-direction: column; 
     }
 
     .contact-info .section-title,
@@ -1070,7 +1061,7 @@ header {
         text-align: center;
     }
     
-    .about-subtitle { /* لتوسيط الكلمة العلوية */
+    .about-subtitle { 
         justify-content: center;
     }
     
@@ -1085,7 +1076,7 @@ header {
     }
 
     .input-row {
-        flex-direction: column; /* حقول الإدخال تحت بعضها في الموبايل */
+        flex-direction: column; 
         gap: 20px;
     }
 }
@@ -1099,22 +1090,22 @@ header {
 
 
 
-/* ================= الفوتر (Footer) ================= */
+/* ================= (Footer) ================= */
 .footer {
-    background-color: #050505; /* لون داكن جداً للفصل عن القسم السابق */
+    background-color: #050505;
     padding: 80px 5% 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .footer-container {
     display: grid;
-    /* تقسيم الشاشة لـ 3 أعمدة (الأول أكبر قليلاً) */
+   
     grid-template-columns: 2fr 1fr 1.5fr; 
     gap: 50px;
     margin-bottom: 50px;
 }
 
-/* تنسيق قسم الشعار */
+
 .footer-brand p {
     color: var(--text-gray);
     font-size: 0.9rem;
@@ -1123,7 +1114,6 @@ header {
     max-width: 80%;
 }
 
-/* أيقونات السوشيال ميديا */
 .social-links {
     display: flex;
     gap: 15px;
@@ -1147,10 +1137,10 @@ header {
     background-color: var(--primary-color);
     color: #000;
     border-color: var(--primary-color);
-    transform: translateY(-5px); /* تأثير حركة للأعلى */
+    transform: translateY(-5px); 
 }
 
-/* تنسيق العناوين في الفوتر */
+
 .footer-links h3,
 .footer-newsletter h3 {
     font-family: var(--font-heading);
@@ -1159,7 +1149,7 @@ header {
     margin-bottom: 25px;
 }
 
-/* تنسيق الروابط السريعة */
+
 .footer-links ul {
     list-style: none;
     display: flex;
@@ -1176,10 +1166,10 @@ header {
 
 .footer-links ul li a:hover {
     color: var(--primary-color);
-    padding-left: 8px; /* تأثير حركة لليمين عند الوقوف بالماوس */
+    padding-left: 8px; 
 }
 
-/* تنسيق النشرة البريدية */
+
 .footer-newsletter p {
     color: var(--text-gray);
     font-size: 0.9rem;
@@ -1226,28 +1216,28 @@ header {
     transform: scale(1.05);
 }
 
-/* حقوق النشر في الأسفل */
+
 .footer-bottom {
     text-align: center;
     padding-top: 25px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    color: rgba(255, 255, 255, 0.3); /* لون رمادي باهت جداً */
+    color: rgba(255, 255, 255, 0.3); 
     font-size: 0.85rem;
 }
 
-/* ================= التجاوب (Responsive) ================= */
+/* =================  (Responsive) ================= */
 
 @media (max-width: 1024px) {
     .footer-container {
-        grid-template-columns: 1fr 1fr; /* تحويل لعمودين في التابلت */
+        grid-template-columns: 1fr 1fr; 
         gap: 40px;
     }
 }
 
 @media (max-width: 768px) {
     .footer-container {
-        grid-template-columns: 1fr; /* عمود واحد في الموبايل */
-        text-align: center; /* توسيط كل شيء */
+        grid-template-columns: 1fr; 
+        text-align: center; 
         gap: 40px;
     }
     
@@ -1256,7 +1246,7 @@ header {
     }
 
     .footer-brand p {
-        margin: 20px auto; /* لضبط النص في المنتصف */
+        margin: 20px auto; 
     }
 
     .social-links {
