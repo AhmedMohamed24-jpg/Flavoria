@@ -13,19 +13,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flavoria Restaurant</title>
-    <!-- استدعاء الخطوط -->
+
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- استدعاء الأيقونات (FontAwesome) -->
+ 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- ملف الستايل -->
+   
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- الجزء الخاص بالخلفية والمحتوى الأول -->
+
     <section class="hero-section" id="home">
         
-        <!-- شريط التنقل (Header) -->
+       
         <header>
             <a href="#" class="logo">
                 <i class="fa-solid fa-cloud-meatball"></i>
@@ -49,14 +49,14 @@
                 <a href="#book" class="btn-outline">
                     <i class="fa-solid fa-utensils"></i> Book a Table
                 </a>
-                <!-- زر القائمة للموبايل -->
+            
                 <div class="menu-toggle" id="mobile-menu">
                     <i class="fa-solid fa-bars"></i>
                 </div>
             </div>
         </header>
 
-        <!-- المحتوى الرئيسي (Hero Content) -->
+        <!-- (Hero Content) -->
         <div class="hero-content">
             <div class="subtitle">
                 <span>GOOD FOOD</span> &bull; <span>GOOD MOOD</span>
@@ -74,7 +74,6 @@
                 </a>
             </div>
 
-            <!-- المميزات في الأسفل -->
             <div class="hero-features">
                 <div class="feature-box">
                     <i class="fa-solid fa-leaf"></i>
@@ -84,7 +83,7 @@
                     </div>
                 </div>
                 <div class="feature-box">
-                    <i class="fa-solid fa-hat-chef"></i> <!-- بديل للأيقونة الاحترافية -->
+                    <i class="fa-solid fa-hat-chef"></i> 
                     <i class="fa-solid fa-user-chef" style="font-family: 'Font Awesome 6 Free'; font-weight: 900;"></i>
                     <div class="feat-text">
                         <h4>Expert Chefs</h4>
@@ -103,17 +102,17 @@
 
     </section>
 
-    <!-- ملف الجافا سكريبت -->
-    <script >// تحديد العناصر من الـ HTML
+  
+    <script >
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.querySelector('.nav-links');
 
-// إضافة حدث النقر (Click Event)
+
 mobileMenu.addEventListener('click', () => {
-    // إضافة أو إزالة كلاس 'active' لإظهار وإخفاء القائمة
+ 
     navLinks.classList.toggle('active');
     
-    // تغيير شكل الأيقونة بين القائمة العادية وعلامة X (اختياري)
+   
     const icon = mobileMenu.querySelector('i');
     if (navLinks.classList.contains('active')) {
         icon.classList.remove('fa-bars');
@@ -128,10 +127,10 @@ mobileMenu.addEventListener('click', () => {
 
 
 
-<!-- قسم المعرض (Gallery) -->
+
     <section class="gallery-section" id="gallery">
         
-        <!-- عنوان القسم -->
+      
         <div class="section-header">
             <div class="section-subtitle">
                 <span>OUR GALLERY</span>
@@ -140,7 +139,7 @@ mobileMenu.addEventListener('click', () => {
             <p class="section-desc">Take a look at some of our favorite moments — delicious dishes,<br>cozy atmosphere, and happy guests.</p>
         </div>
 
-        <!-- أزرار الفلترة -->
+  
         <div class="filter-buttons">
             <button class="filter-btn active" data-filter="all">
                 <i class="fa-solid fa-border-all"></i> All
@@ -156,51 +155,43 @@ mobileMenu.addEventListener('click', () => {
             </button>
         </div>
 
-        <!-- <! شبكة الصور (Grid) -->
 <div class="gallery-grid">
-    <!-- الصورة 1: طويلة (تأخذ صفين) - تم حل مشكلة الرابط هنا -->
     <div class="gallery-item item-tall" data-category="food">
         <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800&auto=format&fit=crop" alt="Delicious Steak">
     </div>
     
-    <!-- الصورة 2 -->
     <div class="gallery-item" data-category="atmosphere">
         <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=600&auto=format&fit=crop" alt="Restaurant Interior">
     </div>
     
-    <!-- الصورة 3 -->
     <div class="gallery-item" data-category="food">
         <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?q=80&w=600&auto=format&fit=crop" alt="Pasta">
     </div>
     
-    <!-- الصورة 4 -->
     <div class="gallery-item" data-category="drinks">
         <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?q=80&w=600&auto=format&fit=crop" alt="Cocktail">
     </div>
 
-    <!-- الصورة 5 -->
     <div class="gallery-item" data-category="food">
         <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?q=80&w=600&auto=format&fit=crop" alt="Dessert">
     </div>
 
-    <!-- الصورة 6 -->
     <div class="gallery-item" data-category="food">
         <img src="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?q=80&w=600&auto=format&fit=crop" alt="Dishes">
     </div>
 
-    <!-- الصورة 7 -->
     <div class="gallery-item" data-category="atmosphere">
         <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=600&auto=format&fit=crop" alt="Tables">
     </div>
 </div>
-        <!-- زر المزيد -->
+       
         <div class="view-more">
             <a href="#" class="btn-outline-gold">View More Photos <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
     </section>
 
-    <!-- كود الـ JavaScript الخاص بالفلترة يعمل مباشرة داخل الـ HTML -->
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const filterBtns = document.querySelectorAll('.filter-btn');
@@ -208,20 +199,18 @@ mobileMenu.addEventListener('click', () => {
 
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    // 1. إزالة كلاس active من كل الأزرار ووضعه للزر المضغوط
+              
                     filterBtns.forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
 
-                    // 2. جلب نوع الفلتر
+                
                     const filterValue = btn.getAttribute('data-filter');
 
-                    // 3. إظهار وإخفاء الصور بناءً على الفلتر
                     galleryItems.forEach(item => {
                         const itemCategory = item.getAttribute('data-category');
                         
                         if (filterValue === 'all' || filterValue === itemCategory) {
                             item.style.display = 'block';
-                            // إضافة أنيميشن بسيط عند الظهور
                             setTimeout(() => {
                                 item.style.opacity = '1';
                                 item.style.transform = 'scale(1)';
@@ -231,7 +220,7 @@ mobileMenu.addEventListener('click', () => {
                             item.style.transform = 'scale(0.8)';
                             setTimeout(() => {
                                 item.style.display = 'none';
-                            }, 300); // نفس مدة الـ transition في الـ CSS
+                            }, 300); 
                         }
                     });
                 });
@@ -256,10 +245,8 @@ mobileMenu.addEventListener('click', () => {
 
 
 
-<!-- قسم القائمة (Menu Section) -->
     <section class="menu-section" id="menu">
         
-        <!-- عنوان القسم -->
         <div class="section-header">
             <div class="section-subtitle">
                 <span>OUR MENU</span>
@@ -268,7 +255,6 @@ mobileMenu.addEventListener('click', () => {
             <p class="section-desc">From classic favorites to unique creations, our menu is crafted<br>with the finest ingredients and a passion for great taste.</p>
         </div>
 
-        <!-- أزرار فلترة المنيو -->
         <div class="menu-filters">
             <button class="menu-filter-btn active" data-filter="all">All</button>
             <button class="menu-filter-btn" data-filter="main">Main Dishes</button>
@@ -278,10 +264,8 @@ mobileMenu.addEventListener('click', () => {
             <button class="menu-filter-btn" data-filter="drinks">Drinks</button>
         </div>
 
-        <!-- شبكة البطاقات (Menu Grid) -->
         <div class="menu-grid">
             
-            <!-- الصنف الأول: Grilled Steak -->
             <div class="menu-card" data-category="main">
                 <div class="card-img">
                     <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=600&auto=format&fit=crop" alt="Grilled Steak">
@@ -296,22 +280,7 @@ mobileMenu.addEventListener('click', () => {
                 </div>
             </div>
 
-            <!-- الصنف الثاني: Mozzarella Sticks (Appetizers) -->
-            <!-- <div class="menu-card" data-category="appetizers">
-                <div class="card-img">
-                    <img src="https://images.unsplash.com/photo-1548869206-92b0261f9a1f?q=80&w=600&auto=format&fit=crop" alt="Appetizers">
-                </div>
-                <div class="card-content">
-                    <h3>Mozzarella Sticks</h3>
-                    <p>Crispy mozzarella sticks served with a special marinara sauce.</p>
-                    <div class="card-footer">
-                        <span class="price">$8.99</span>
-                        <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i></button>
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- الصنف الثالث: Caesar Salad -->
+       
             <div class="menu-card" data-category="salads">
                 <div class="card-img">
                     <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=600&auto=format&fit=crop" alt="Caesar Salad">
@@ -326,7 +295,7 @@ mobileMenu.addEventListener('click', () => {
                 </div>
             </div>
 
-            <!-- الصنف الرابع: Chocolate Lava Cake -->
+          
             <div class="menu-card" data-category="desserts">
                 <div class="card-img">
                     <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?q=80&w=600&auto=format&fit=crop" alt="Chocolate Lava Cake">
@@ -341,7 +310,6 @@ mobileMenu.addEventListener('click', () => {
                 </div>
             </div>
 
-            <!-- الصنف الخامس: Fresh Lemonade -->
             <div class="menu-card" data-category="drinks">
                 <div class="card-img">
                     <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=600&auto=format&fit=crop" alt="Fresh Lemonade">
@@ -358,14 +326,12 @@ mobileMenu.addEventListener('click', () => {
 
         </div>
 
-        <!-- زر المزيد -->
         <div class="view-more">
             <a href="#" class="btn-outline-gold">View Full Menu <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
     </section>
 
-    <!-- سكريبت الفلترة الخاص بقسم المنيو -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const menuFilterBtns = document.querySelectorAll('.menu-filter-btn');
@@ -373,9 +339,7 @@ mobileMenu.addEventListener('click', () => {
 
             menuFilterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    // إزالة كلاس active من كل الأزرار
                     menuFilterBtns.forEach(b => b.classList.remove('active'));
-                    // إضافة كلاس active للزر المضغوط
                     btn.classList.add('active');
 
                     const filterValue = btn.getAttribute('data-filter');
@@ -413,15 +377,12 @@ mobileMenu.addEventListener('click', () => {
 
 
 
-<!-- قسم من نحن (About Section) -->
     <section class="about-section" id="about">
         <div class="about-container">
             
-            <!-- الجزء الأيسر: الصورة والشريحة العائمة -->
             <div class="about-image-col">
                 <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=800&auto=format&fit=crop" alt="Chef preparing food" class="main-about-img">
                 
-                <!-- الشريحة العائمة (Badge) -->
                 <div class="experience-badge">
                     <div class="badge-icon"><i class="fa-solid fa-award"></i></div>
                     <div class="badge-text">
@@ -431,9 +392,7 @@ mobileMenu.addEventListener('click', () => {
                 </div>
             </div>
 
-            <!-- الجزء الأيمن: النصوص والإحصائيات -->
             <div class="about-text-col">
-                <!-- عنوان القسم (معدل ليكون على اليسار) -->
                 <div class="section-subtitle about-subtitle">
                     <span>OUR STORY</span>
                 </div>
@@ -442,7 +401,6 @@ mobileMenu.addEventListener('click', () => {
                 
                 <p class="section-desc">Whether you are here for a quick bite or a grand celebration, our cozy atmosphere and dedicated staff ensure a memorable experience.</p>
 
-                <!-- الإحصائيات (Stats Grid) -->
                 <div class="about-stats">
                     <div class="stat-item">
                         <h3 class="counter" data-target="50">0</h3><span>+</span>
@@ -458,21 +416,18 @@ mobileMenu.addEventListener('click', () => {
                     </div>
                 </div>
 
-                <!-- زر دعوة لاتخاذ إجراء -->
                 <a href="#contact" class="btn-solid">Book a Table <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
         </div>
     </section>
 
-    <!-- كود الجافا سكريبت لتشغيل العدادات عند الوصول للقسم -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const counters = document.querySelectorAll('.counter');
             const aboutSection = document.querySelector('.about-section');
-            let activated = false; // لمنع تشغيل العداد أكثر من مرة
+            let activated = false; 
 
-            // إعداد الـ Intersection Observer لمراقبة متى يظهر القسم على الشاشة
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting && !activated) {
@@ -481,7 +436,6 @@ mobileMenu.addEventListener('click', () => {
                             const updateCounter = () => {
                                 const target = +counter.getAttribute('data-target');
                                 const current = +counter.innerText;
-                                // سرعة العد (كلما زاد الرقم قلّت السرعة)
                                 const increment = target / 40; 
 
                                 if (current < target) {
@@ -493,10 +447,10 @@ mobileMenu.addEventListener('click', () => {
                             };
                             updateCounter();
                         });
-                        activated = true; // تم التشغيل بنجاح
+                        activated = true; 
                     }
                 });
-            }, { threshold: 0.5 }); // يعمل عندما يظهر 50% من القسم في الشاشة
+            }, { threshold: 0.5 }); 
 
             if (aboutSection) {
                 observer.observe(aboutSection);
@@ -520,11 +474,9 @@ mobileMenu.addEventListener('click', () => {
 
 
 
-<!-- قسم التواصل والحجز (Contact Section) -->
     <section class="contact-section" id="contact">
         <div class="contact-container">
             
-            <!-- الجزء الأيسر: معلومات التواصل -->
             <div class="contact-info">
                 <div class="section-subtitle about-subtitle">
                     <span>GET IN TOUCH</span>
@@ -564,7 +516,6 @@ mobileMenu.addEventListener('click', () => {
                 </div>
             </div>
 
-            <!-- الجزء الأيمن: نموذج الحجز (Form) -->
             <div class="contact-form-wrapper">
                 <form id="reservationForm" class="contact-form">
                     <div class="input-group">
@@ -602,7 +553,6 @@ mobileMenu.addEventListener('click', () => {
                     <button type="submit" class="btn-solid btn-full">Confirm Reservation <i class="fa-solid fa-check"></i></button>
                 </form>
 
-                <!-- رسالة النجاح (تظهر بعد ملء الفورم) -->
                 <div id="successMessage" class="success-message">
                     <i class="fa-solid fa-circle-check"></i>
                     <h3>Thank You!</h3>
@@ -614,7 +564,6 @@ mobileMenu.addEventListener('click', () => {
         </div>
     </section>
 
-    <!-- كود الجافا سكريبت الخاص بالفورم -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('reservationForm');
@@ -622,9 +571,8 @@ mobileMenu.addEventListener('click', () => {
             const bookAnotherBtn = document.getElementById('bookAnother');
 
             form.addEventListener('submit', (e) => {
-                e.preventDefault(); // منع الصفحة من التحميل (Reload)
+                e.preventDefault(); 
                 
-                // إضافة تأثير اختفاء للفورم وظهور لرسالة النجاح
                 form.style.opacity = '0';
                 setTimeout(() => {
                     form.style.display = 'none';
@@ -636,13 +584,12 @@ mobileMenu.addEventListener('click', () => {
                 }, 300);
             });
 
-            // زر العودة للحجز مرة أخرى
             bookAnotherBtn.addEventListener('click', () => {
                 successMsg.style.opacity = '0';
                 successMsg.style.transform = 'scale(0.9)';
                 setTimeout(() => {
                     successMsg.style.display = 'none';
-                    form.reset(); // تفريغ الحقول
+                    form.reset(); 
                     form.style.display = 'flex';
                     setTimeout(() => {
                         form.style.opacity = '1';
@@ -670,11 +617,9 @@ mobileMenu.addEventListener('click', () => {
 
 
 
-<!-- الفوتر (Footer) -->
     <footer class="footer">
         <div class="footer-container">
             
-            <!-- الجزء الأول: الشعار ونبذة مختصرة -->
             <div class="footer-brand">
                 <a href="#home" class="logo">
                     <i class="fa-solid fa-cloud-meatball"></i>
@@ -691,7 +636,6 @@ mobileMenu.addEventListener('click', () => {
                 </div>
             </div>
             
-            <!-- الجزء الثاني: الروابط السريعة -->
             <div class="footer-links">
                 <h3>Quick Links</h3>
                 <ul>
@@ -703,7 +647,8 @@ mobileMenu.addEventListener('click', () => {
                 </ul>
             </div>
             
-            <!-- الجزء الثالث: النشرة البريدية -->
+           
+            
             <div class="footer-newsletter">
                 <h3>Newsletter</h3>
                 <p>Subscribe to get special offers and updates.</p>
@@ -715,7 +660,7 @@ mobileMenu.addEventListener('click', () => {
 
         </div>
         
-        <!-- حقوق النشر -->
+       
         <div class="footer-bottom">
             <p>&copy; 2026 Flavoria Restaurant. All rights reserved.</p>
         </div>
